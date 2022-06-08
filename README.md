@@ -1,4 +1,4 @@
-# Protfolio Project
+# Portfolio Project
 
 Some of my project made to learn/practice programming and data analytics
 
