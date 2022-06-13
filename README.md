@@ -8,5 +8,5 @@ js-basics
 3. Rock, Paper, Scissors
 
 data cleaning
-- Clean Nashville Housing Data using Microsoft SQL
+1. Clean Nashville Housing Data using Microsoft SQL
 - Dataset : https://github.com/AlexTheAnalyst/PortfolioProjects/blob/main/Nashville%20Housing%20Data%20for%20Data%20Cleaning.xlsx
