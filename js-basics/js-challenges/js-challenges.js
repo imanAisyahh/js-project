@@ -93,6 +93,65 @@ function rpsFrontEnd (humanImageChoice, botImageChoice, finalMessage) {
     document.getElementById('flex-box-rps-div').appendChild(botDiv);
 }
 
-// function repeat(yourChoice){
-//     return rpsGame();
-// }
+///// Challenge 4: Change Buttons Color /////
+
+var all_buttons = document.getElementsByTagName('button');
+var copyAllButtons = [];
+// duplicate of all_buttons
+for (let i=0; i < all_buttons.length; i++){
+    //push all current bottun without class (btn)
+    copyAllButtons.push(all_buttons[i].classList[1]);
+}
+console.log(copyAllButtons);
+
+
+// main controller function
+function buttonColorChange(buttonThingy){
+    if (buttonThingy.value === 'red'){
+        buttonsRed();
+    } else if (buttonThingy.value === 'green'){
+        buttonsGreen();
+    } else if (buttonThingy.value === 'reset'){
+        buttonsColorReset();
+    } else if (buttonThingy.value === 'random'){
+        randomColor();
+    }
+}
+
+function buttonsRed(){
+    for (let i=0; i<all_buttons.length; i++){
+        // first class remove original i, second class add 1 as new color
+        all_buttons[i].classList.remove(all_buttons[i].classList[1]);
+        all_buttons[i].classList.add('btn-danger');
+    }
+}
+
+function buttonsGreen(){
+    for (let i=0; i<all_buttons.length; i++){
+        // first class remove second class
+        all_buttons[i].classList.remove(all_buttons[i].classList[1]);
+        all_buttons[i].classList.add('btn-success');
+    }
+}
+
+function buttonsColorReset(){
+    for (let i=0; i < all_buttons.length; i++){
+        all_buttons[i].classList.remove(all_buttons[i].classList[1]);
+        all_buttons[i].classList.add(copyAllButtons[i]);
+//        all_buttons[i].classList.add('btn-danger','btn-success','btn-primary','btn-warning');
+        console.log(copyAllButtons[i]);
+    }
+}
+
+function randomColor() {
+    let choices = ['btn-primary', 'btn-danger', 'btn-success', 'btn-warning'];
+    
+    for (let i=0; i<all_buttons.length; i++){
+        let randNumber = Math.floor(Math.random() * 4);
+        //remove color
+        all_buttons[i].classList.remove(all_buttons[i].classList[1]);
+        //add class index choice random number
+        all_buttons[i].classList.add(choices[randNumber]);
+    }
+}
+
