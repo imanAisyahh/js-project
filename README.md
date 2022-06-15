@@ -1,6 +1,6 @@
 # Portfolio Project
 
-Some the project made to learn/practice programming and data analytics
+Projects made to learn/practice programming and data analytics
 
 js-basics
 1. What is your age in days?
